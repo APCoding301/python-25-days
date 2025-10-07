@@ -44,12 +44,25 @@
 # Type hints are not enforced at runtime by Python itself
 # They are mainly for static analysis tools and for better code readability
 
-numbers: list[int] = [1, 2, 3, 4, 5]
-names: list[str] = ["Alice", "Bob", "Charlie"]
-# without type hints, we can indeed set up a list!
-mixed_list = [1, "two", 3, True]  # This is valid in Python
-print(mixed_list)
-# But with type hints, we can specify the expected types
-# CORRECT way to write the above would be:
-mixed_list2: list[int | str | bool] = [1, "two", 3, True]
-print(mixed_list2)
+# numbers: list[int] = [1, 2, 3, 4, 5]
+# names: list[str] = ["Alice", "Bob", "Charlie"]
+# # without type hints, we can indeed set up a list!
+# mixed_list = [1, "two", 3, True]  # This is valid in Python
+# print(mixed_list)
+# # But with type hints, we can specify the expected types
+# # CORRECT way to write the above would be:
+# mixed_list2: list[int | str | bool] = [1, "two", 3, True]
+# print(mixed_list2)
+
+import formatter
+import faker
+
+print('Version: ', formatter.VERSION)
+user_input: str = input("Enter a title: ")
+print(f'Title: {formatter.format_title(user_input)}')
+
+fake = faker.Faker()
+print("Fake name:", fake.name())
+print("Fake email:", fake.email())
+
+
