@@ -1,5 +1,5 @@
-# print("Hello, Python!")
-# print("Running this program with keyboard shortcut of Ctrl+Alt+4")
+print("Hello, Python!")
+print("Running this program with keyboard shortcut of Ctrl+Alt+4")
 
 # # Python does not have a "true" constant!
 # # But by convention, we use ALL_CAPS for variables that should not change
@@ -35,7 +35,7 @@
 
 # QUIZ QUESTIONS
 
-#print(10 + '20') -- this will cause an error "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
+# print(10 + '20') -- this will cause an error "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
 
 # x: int = 'Hello Bob!'
 # print(x) 
@@ -54,15 +54,13 @@
 # mixed_list2: list[int | str | bool] = [1, "two", 3, True]
 # print(mixed_list2)
 
-import formatter
-import faker
+# import formatter
+# from faker import Faker
 
-print('Version: ', formatter.VERSION)
-user_input: str = input("Enter a title: ")
-print(f'Title: {formatter.format_title(user_input)}')
+# print('Version: ', formatter.VERSION)
+# user_input: str = input("Enter a title: ")
+# print(f'Title: {formatter.format_title(user_input)}')
 
-fake = faker.Faker()
-print("Fake name:", fake.name())
-print("Fake email:", fake.email())
-
-
+# fake = Faker()
+# print("Fake name:", fake.name())
+# print("Fake email:", fake.email())
