@@ -1,4 +1,15 @@
 import re
+from collections.abc import Iterator
+
+
+def is_known_domain(email: str) -> bool:
+    return email.__contains__('@gmail.com') or email.__contains__('@yahoo.com') or email.__contains__('@hotmail.com')
+
+
+def extract_known_domains(all_emails: list[str]) -> list[str]:
+    known_emails: Iterator[str] = filter(is_known_domain, all_emails)
+    return list(known_emails)
+
 
 
 def extract_emails(
@@ -25,17 +36,31 @@ def extract_emails(
 
 def list_emails(path: str) -> None:
     emails: list[str] = []
+    well_known_emails: list[str] = []
 
     # Also show that this works with website source code
     with open(path, 'r') as f:
         text: str = f.read()
         emails = extract_emails(text, True, False)
+        well_known_emails = extract_known_domains(emails)
 
     if emails:
+        print('All Email IDs found are:')
         for email in emails:
             print(email)
     else:
         print('No emails found...')
+    
+    print('-' * 40)
+
+    if well_known_emails:
+        print('Well-known domain Email IDs found are:')
+        for email in well_known_emails:
+            print(email)
+    else:
+        print('No well-known domain emails found...')
+    
+    print('-' * 40)
 
 
 def main() -> None:

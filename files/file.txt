@@ -23,3 +23,13 @@ Michael.Jackson@BreakDance.com
 Michael.Jordan@BasketBall.com
 Michael.Jordan@BasketBall.com -- dupe email! if flag is true, should be discarded!
 hoohAH@gigglingAway.com
+one@gmail.com
+two@gmail.com
+three@gmail.com
+one@yahoo.com
+two@yahoo.com
+three@yahoo.com
+one@hotmail.com
+two@hotmail.com
+three@hotmail.com
+
