@@ -1,3 +1,4 @@
+#import typing
 import matplotlib.pyplot as plt
 
 # Main data - AP version - load from .XLSX file in the same directory as this .py file.
@@ -11,7 +12,7 @@ import pandas as pd
 
 file_name = 'source_for25dayPython.xlsx'
 try:
-    df = pd.read_excel(file_name, dtype={
+    df: pd.DataFrame = pd.read_excel(file_name, sheet_name=0, dtype={
     'monthly_income': float,
     'rent': float,
     'food': float,
